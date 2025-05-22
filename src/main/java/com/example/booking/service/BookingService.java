@@ -11,6 +11,7 @@ import org.springframework.stereotype.Service;
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 public class BookingService {
@@ -54,4 +55,11 @@ public class BookingService {
 //    public List<Booking> getUserBookings(Long userId) {
 //        return bookingRepo.findByUserId(userId);
 //    }
+    public List<String> getBookedTimesByDate(String dateString) {
+        LocalDate date = LocalDate.parse(dateString); // expects yyyy-MM-dd
+        List<Booking> bookings = bookingRepo.findByDate(date);
+        return bookings.stream()
+                .map(Booking::getTime)
+                .collect(Collectors.toList());
+    }
 }
