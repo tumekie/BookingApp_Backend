@@ -4,6 +4,7 @@ import com.example.booking.dto.BookingDTO;
 import com.example.booking.entity.Booking;
 import com.example.booking.service.BookingService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -30,5 +31,11 @@ public class BookingController {
     @GetMapping
     public List<Booking> getAllBookings() {
         return bookingService.getAllBookings();
+    }
+
+    @GetMapping("/times")
+    public ResponseEntity<List<String>> getBookedTimes(@RequestParam String date) {
+        List<String> bookedTimes = bookingService.getBookedTimesByDate(date);
+        return ResponseEntity.ok(bookedTimes);
     }
 }
