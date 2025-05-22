@@ -7,14 +7,14 @@ import java.time.LocalTime;
 
 public class BookingDTO {
     private LocalDate date;
-    private LocalTime time;
+    private String time;
     private String name;
     private String email;
     public LocalDate getDate() {
         return date;
     }
 
-    public LocalTime getTime() {
+    public String getTime() {
         return time;
     }
 

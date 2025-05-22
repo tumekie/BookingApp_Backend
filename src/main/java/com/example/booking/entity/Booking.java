@@ -17,7 +17,7 @@ public class Booking {
     private Long id;
 
     private LocalDate date;
-    private LocalTime time;
+    private String time;
     private String name;
     private String email;
 
@@ -31,11 +31,11 @@ public class Booking {
         this.date = date;
     }
 
-    public LocalTime getTime() {
+    public String getTime() {
         return time;
     }
 
-    public void setTime(LocalTime time) {
+    public void setTime(String time) {
         this.time = time;
     }
 
