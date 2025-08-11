@@ -1,0 +1,19 @@
+# Ignore IDE-specific files
+.idea/
+.vscode/
+*.iml
+
+# Ignore build output
+target/
+build/
+
+# Ignore OS-specific files
+.DS_Store
+Thumbs.db
+
+# Ignore local and dev configs
+src/main/resources/application-dev.properties
+
+# Ignore any backup or temp files
+*.bak
+*.tmp
