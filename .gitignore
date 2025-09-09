@@ -9,6 +9,7 @@ build/
 
 # Ignore OS-specific files
 .DS_Store
+._*
 Thumbs.db
 
 # Ignore local and dev configs
